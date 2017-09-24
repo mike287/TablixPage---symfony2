@@ -1,0 +1,13 @@
+{#{% extends "ProjectTablixBundle::base.html.twig" %}
+
+{% set hideSidebar = true %}#}
+
+{% block pageTitle %} Strona nie została znaleziona  {% endblock %}
+
+
+{% block content %}
+    <div class="error-page">
+        <img src="{{ asset('bundles/projecttablix/img/404-error.jpg') }}" alt="error404">
+    </div>
+
+{% endblock %} 

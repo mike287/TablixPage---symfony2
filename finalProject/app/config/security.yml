@@ -1,0 +1,45 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        UserBundle\Entity\User:
+            algorithm: bcrypt
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        project_users:
+            entity: 
+                class: UserBundle:User
+                property: username
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        page_security:
+            pattern: ^/
+            anonymous: ~
+            form_login:
+                check_path: _check_path
+                login_path: page_login
+                default_target_path: page_index
+                username_parameter: login[username]
+                password_parameter: login[password]
+                
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /
+                remember_me_parameter: login[remember_me]
+            # activate different ways to authenticate
+            logout:
+                path: _logout
+                target: page_index
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~

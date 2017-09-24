@@ -1,0 +1,21 @@
+project_tablix_login:
+    resource: "@UserBundle/Controller/LoginController.php"
+    type:   annotation
+    prefix:   /
+    
+_check_path:
+    path: 'login_check'
+    
+_logout:
+    path: /logout
+    
+project_tablix_pages:
+    resource: "@ProjectTablixBundle/Controller/PagesController.php"
+    type:   annotation
+    prefix:   /
+
+project_tablix_posts:
+    resource: "@ProjectTablixBundle/Controller/PostsController.php"
+    type:   annotation
+    prefix:   /
+    

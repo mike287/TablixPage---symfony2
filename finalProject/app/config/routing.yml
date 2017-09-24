@@ -1,0 +1,3 @@
+project_tablix:
+    resource:   "@ProjectTablixBundle/Resources/config/routing.yml"
+    prefix:   /

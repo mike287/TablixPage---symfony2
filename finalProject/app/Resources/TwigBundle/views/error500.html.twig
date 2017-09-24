@@ -1,0 +1,14 @@
+{% extends "ProjectTablixBundle::base.html.twig" %}
+
+{% set hideSidebar = true %}
+
+{% block pageTitle %} Niespodziewany błąd  {% endblock %}
+
+{% block content %} Niespodziewany błąd {% endblock %} 
+
+{% block content %}
+    <div class="error-page">
+        <img src="{{ asset('bundles/projecttablix/img/500-error.jpg') }}" alt="error500">
+    </div>
+
+{% endblock %} 

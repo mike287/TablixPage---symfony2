@@ -1,0 +1,4 @@
+services:
+#    project_tablix.example:
+#        class: Project\TablixBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
